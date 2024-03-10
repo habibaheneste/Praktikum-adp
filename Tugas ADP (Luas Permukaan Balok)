@@ -1,0 +1,20 @@
+program luaspermukaanbalok;
+uses crt;
+var
+luas, panjang, lebar,tinggi:Real;
+begin
+clrscr();
+WriteLn(' ° Nama : Ummi Habibah Nst ');
+WriteLn(' ° NIM : 2310431032 ');
+WriteLn( ' ° Shift : 1 ');
+WriteLn('######Tugas Praktikum ADP######');
+WriteLn('......Luas Permukaan Balok......');
+Write('masukkan panjang= ');
+ReadLn(panjang);
+Write('masukkan lebar =');
+ReadLn(lebar);
+Write('masukkan tinggi=');
+ReadLn(tinggi);
+luas:= 2 * (panjang * lebar + panjang * tinggi + lebar * tinggi);
+WriteLn('luas = ',luas);
+end.
