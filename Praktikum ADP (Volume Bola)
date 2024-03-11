@@ -1,0 +1,18 @@
+program volumebola;
+uses crt;
+var
+jari,phi,volume :real;
+begin
+clrscr();
+WriteLn(' ~ Nama : Ummi Habibah Nst ');
+WriteLn(' ~ NIM : 2310431032 ');
+WriteLn(' ~ Shift : 1 ');
+WriteLn(',,,,,Tugas Praktikum ADP,,,,, ');
+WriteLn('     Volume Bola         ');
+Write('masukkan jari =');
+ReadLn(jari);
+Write('masukkan phi = ');
+ReadLn(phi);
+volume := 4/3*phi*jari*jari*jari;
+WriteLn('volume = ',volume);
+end.
