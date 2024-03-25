@@ -1,0 +1,179 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int choice, n, m1;
+    bool check = true;
+
+    while (check)
+    {
+        // ------------
+        // MENU
+        // ------------
+        cout << " Nama  : Ummi Habibah Nst" << endl;
+        cout << " No BP : 2310431032 " << endl;
+        cout << " Shift : 1 " << endl;
+        cout << "\nMENU : " << endl;
+        cout << " PROGRAM PENGKONDISIAN"<< endl;
+        cout << "=================================================== " << endl;
+        cout << "|1. Tabel Perkalian n x n                         |" << endl;
+        cout << "|2. Tabel Penjumlahan n x n                       |" << endl;
+        cout << "|3. Tabel Pengurangan n x n// Pilihan baru.       |" << endl;
+        cout << "|4. Keluar                                        |" << endl;
+        cout << "=================================================== " << endl;
+        // Input Choice
+        // -------------
+        cout << "\nMasukkan Pilihan Anda : ";
+        cin >> choice;
+        // Check Input Validity
+        // --------------------
+        if (choice < 1 || choice > 4)
+        {
+            // Input Invalid
+            // -------------
+            cout << "Input Invalid !!" << endl;
+            cout << "Silahkan Masukkan Ulang !!!" << endl;
+        }
+        // Selection of Choice
+        // ------------------
+        else
+        {
+            // Checking Choice
+            // ----------------
+            switch (choice)
+            {
+            // Multiplication Table
+            // --------------------
+            case 1:
+                // Display Menu
+                // ------------
+                cout << "\n\nTABEL PERKALIAN n x n" << endl;
+                // Input n
+                // -------
+                cout << "Masukkan Nilai n : ";
+                cin >> n;
+                // Checking Input
+                // --------------
+                if (n < 1 || n > 10)
+                {
+                    // Input Invalid
+                    // -------------
+                    cout << "Input Invalid !!" << endl;
+                    cout << "Silahkan Masukkan Ulang !!!" << endl;
+                }
+                else
+                {
+                    // Displaying the Table
+                    // -------------------
+                    cout << "\nHasil Perkalian N x N" << endl;
+                    cout << "--------------------" << endl;
+                    // Loop for Table
+                    // --------------
+                    for (m1 = 1; m1 <= 10; m1++)
+                    {
+                        cout << endl;
+                        // Calculation
+                        // -----------
+                        cout << n << " x " << m1 << " = " << n * m1 << endl;
+                    }
+                }
+                break;
+
+            // Addition Table
+            // --------------
+            case 2:
+                // Display Menu
+                // ------------
+                cout << "\n\nTABEL PENJUMLAHAN n x n" << endl;
+                // Input n
+                // -------
+                cout << "Masukkan Nilai n : ";
+                cin >> n;
+                // Checking Input
+                // --------------
+                if (n < 1 || n > 10)
+                {
+                    // Input Invalid
+                    // -------------
+                    cout << "Input Invalid !!" << endl;
+                    cout << "Silahkan Masukkan Ulang !!!" << endl;
+                }
+                else
+                {
+                    // Displaying the Table
+                    // -------------------
+                    cout << "\nHasil Penjumlahan n x n" << endl;
+                    cout << "--------------------" << endl;
+                    // Loop for Table
+                    // --------------
+                    for (m1 = 1; m1 <= 10; m1++)
+                    {
+                        // Calculation
+                        // -----------
+                        cout << endl;
+                        cout << n << " + " << m1 << " = " << n + m1 << endl;
+                    }
+                }
+                break;
+
+            // Subtraction Table
+            // ------------------
+            case 3:
+                // Display Menu
+                // -------------
+                cout << "\n\nTABEL PENGURANGAN n x n" << endl;
+                // Input n
+                // -------
+                cout << "Masukkan Nilai n : ";
+                cin >> n;
+                // Checking Input
+                // --------------
+                if (n < 1 || n > 10)
+                {
+                    // Input Invalid
+                    // -------------
+                    cout << "Input Invalid !!" << endl;
+                    cout << "Silahkan Masukkan Ulang !!!" << endl;
+                }
+                else
+                {
+                    // Displaying the Table
+                    // -------------------
+                    cout << "\nHasil Pengurangan n x n" << endl;
+                    cout << "--------------------" << endl;
+                    // Loop for Table
+                    // --------------
+                    for (m1 = 1; m1 <= 10; m1++)
+                    {
+                        // Calculation
+                        // -----------
+                        cout << endl;
+                        cout << n << " - " << m1 << " = " << n - m1 << endl;
+                    }
+                }
+                break;
+
+            // Exit
+            // ----
+            case 4:
+                // Validation
+                // ----------
+                check = false;
+                // Exiting the Program
+                // ------------------
+                break;
+            }
+        }
+
+        // Input Line
+        // ---------
+        cout << "\n\nTekan 'Enter 'Untuk Kembali ke Menu !!" << endl;
+        cin.ignore();
+        cin.get();
+    }
+    // Return the Program
+    // ------------------
+    return 0;
+} 
