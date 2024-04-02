@@ -1,0 +1,24 @@
+print("Nama : Ummi Habibah Nst")
+print("NIM : 2310431032")
+print("Shift : 1")
+print("Tugas Praktikum ADP")
+def print_number_triangle(height):
+   
+    if not isinstance(height, int) or height <= 0:
+        print("Tinggi harus berupa bilangan bulat positif.")
+        return
+
+   
+    for i in range(1, height + 1):
+        print(" " * (height - i) + " ".join(str(j) for j in range(1, i + 1)))
+
+
+user_height = input("Masukkan tinggi segitiga: ")
+
+try:
+   
+    height = int(user_height)
+    print_number_triangle(height)
+except ValueError:
+    
+    print("Tinggi harus berupa bilangan bulat positif.")
