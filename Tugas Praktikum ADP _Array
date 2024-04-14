@@ -1,0 +1,28 @@
+print("Nama : Ummi Habibah Nst")
+print("NIM : 2310431032")
+print("Shift : 1")
+print("Tugas Praktikum ADP : Modul V")
+def caesar_cipher(text, shift):
+    result = ""
+    for char in text:
+        if char.isalpha():
+            if char.islower():
+                result += chr((ord(char) - ord('a') + shift) % 26 + ord('a'))
+            else:
+                result += chr((ord(char) - ord('A') + shift) % 26 + ord('A'))
+        else:
+            result += char
+    return result
+
+def main():
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    k = int(input("Masukkan nilai k (dari 1 hingga 26): "))
+    if k < 1 or k > 26:
+        print("Nilai k tidak valid.")
+        return
+    text = input("Masukkan teks yang akan dienkripsi: ")
+    encrypted_text = caesar_cipher(text, k)
+    print("Teks setelah dienkripsi:", encrypted_text)
+
+if __name__ == "__main__":
+    main()
