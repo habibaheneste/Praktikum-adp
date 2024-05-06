@@ -1,0 +1,17 @@
+jadwal_penerbangan = [
+    ["Medan", "Padang", "07:00", "11:00"],
+    ["Panyabungan", "Padang", "09:00", "11:00"],
+    ["Medan", "Panyabungan", "06:00", "09:00"],
+    ["Sibolga", "Padang", "07:00", "10:00"],
+    ["Medan", "Sibolga", "08:00", "10:00"],
+    ["Kotanopan", "Padang", "09:00", "10:00"]
+]
+def tampilkan_jadwal(jadwal):
+        print("Jadwal Penerbangan:")
+        print("----------------------------------------------------------------------------")
+        print("|   Kota Asal   |   Kota Tujuan   | Waktu Keberangkatan | Waktu Kedatangan |")
+        print("----------------------------------------------------------------------------")
+        for penerbangan in jadwal:
+            print("| {:^13} | {:^15} | {:^19} | {:^16} |".format(*penerbangan))
+        print("----------------------------------------------------------------------------")
+tampilkan_jadwal(jadwal_penerbangan)
