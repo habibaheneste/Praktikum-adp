@@ -1,0 +1,45 @@
+jadwal_penerbangan = [
+    ["Medan", "Padang", "07:00", "11:00"],
+    ["Panyabungan", "Padang", "09:00", "11:00"],
+    ["Medan", "Panyabungan", "06:00", "09:00"],
+    ["Sibolga", "Padang", "07:00", "10:00"],
+    ["Medan", "Sibolga", "08:00", "10:00"],
+    ["Kotanopan", "Padang", "09:00", "10:00"]
+]
+def tampilkan_jadwal(jadwal):
+        print("Jadwal Penerbangan:")
+        print("----------------------------------------------------------------------------")
+        print("|   Kota Asal   |   Kota Tujuan   | Waktu Keberangkatan | Waktu Kedatangan |")
+        print("----------------------------------------------------------------------------")
+        for penerbangan in jadwal:
+            print("| {:^13} | {:^15} | {:^19} | {:^16} |".format(*penerbangan))
+        print("----------------------------------------------------------------------------")
+def rute_tercepat(asal, tujuan, jadwal):
+    waktu_tercepat = float('inf')
+    rute_tercepat = None
+    for penerbangan in jadwal:
+        if penerbangan[0] == asal and penerbangan[1] == tujuan:
+            waktu_berangkat = penerbangan[2]
+            waktu_tiba = penerbangan[3]
+            durasi = hitung_durasi(waktu_berangkat, waktu_tiba)
+            if durasi < waktu_tercepat:
+                waktu_tercepat = durasi
+                rute_tercepat = penerbangan
+    return rute_tercepat
+def hitung_durasi(waktu_berangkat, waktu_tiba):
+    jam_berangkat, menit_berangkat = map(int, waktu_berangkat.split(':'))
+    jam_tiba, menit_tiba = map(int, waktu_tiba.split(':'))
+    durasi = (jam_tiba - jam_berangkat) * 60 + (menit_tiba - menit_berangkat)
+    return durasi
+tampilkan_jadwal(jadwal_penerbangan)
+asal = "Kotanopan"
+tujuan = "Padang"
+rute = rute_tercepat(asal, tujuan, jadwal_penerbangan)
+if rute:
+    print(f"\nRute tercepat adalah dari {asal} ke {tujuan} :")
+    print("Kota Asal:", rute[0])
+    print("Kota Tujuan:", rute[1])
+    print("Waktu Berangkat:", rute[2])
+    print("Waktu Tiba:", rute[3])
+else:
+    print(f"Tidak ada rute langsung dari {asal} ke {tujuan}.")
