@@ -1,0 +1,72 @@
+my_schedule = [
+    ["03:00", "06:00", "sholat tahajjud sekaligus sholat subuh"],
+    ["06:00", "06:30", "siap-siap ke kantor"],
+    ["06:30", "06:45", "sarapan"],
+    ["06:45", "07:00", "manaskan mobil lalu berangkat ngantor"],
+    ["07:00", "10:00", "ngantor"],
+    ["10:00", "12:00", "rapat bersama klien"],
+    ["12:00", "13:00", "sholat dzuhur sekaligus makan siang"],
+    ["13:00", "15:30", "ngantor lagi"],
+    ["15:30", "16:00", "sholat asar"],
+    ["16:00", "18:00", "ngantor lagi"],
+    ["18:00", "18:30", "siap ngantor sekaligus pulang"],
+    ["18:30", "19:00", "sholat maghrib sekaligus ngaji"],
+    ["19:00", "19:30", "makan malam"],
+    ["19:30", "20:00", "sholat isya"],
+
+    ["20:00", "22:00", "ngerjakan tugas kantor"],
+    ["22:00", "03:00", "istirahat"]
+]
+
+def schedule_awal(schedule_awal):
+    print("Schedule Bibah : ")
+    print("-" * 70)
+    print("|{:13} | {:13} | {:35}|".format("Waktu mulai", "Waktu selesai", "Deskripsi Kegiatan"))
+    print("-" * 70)
+    for jadwal in schedule_awal:
+        print("|{:<13} | {:<13} | {:<35}|".format(*jadwal))
+        print("-" * 70)
+
+def tambah_kegiatan(my_schedule, waktu_mulai, waktu_selesai, deskripsi):
+    kegiatan_baru = {
+        'waktu_mulai': waktu_mulai,
+        'waktu_selesai': waktu_selesai,
+        'deskripsi': deskripsi
+    }
+    my_schedule.append([waktu_mulai, waktu_selesai, deskripsi])
+    print("Kegiatan berhasil ditambahkan!")
+
+def hapus_kegiatan(index):
+    if 0 <= index < len(my_schedule):
+        del my_schedule[index]
+        print("Kegiatan berhasil dihapus!")
+    else:
+        print("Indeks kegiatan tidak valid.")
+
+schedule_awal(my_schedule)
+
+while True:
+    print("\nPilihan Perubahan Jadwal")
+    print("1. Tambahkan jadwal terbaru")
+    print("2. Hapus jadwal")
+    print("3. Tampilkan jadwal")
+    print("4. Selesai ")
+
+    pilih = int(input("Pilihan Perubahan Jadwal = "))
+
+    if pilih == 1:
+        mulai = input("Masukkan Waktu Mulai Kegiatan (Jam:Menit): ")
+        selesai = input("Masukkan Waktu Selesai Kegiatan (Jam:Menit): ")
+        deskripsi = input("Masukkan Deskripsi Kegiatan: ")
+        tambah_kegiatan(my_schedule, mulai, selesai, deskripsi)
+
+    elif pilih == 2:
+        index = int(input("Masukkan indeks kegiatan yang ingin dihapus: "))
+        hapus_kegiatan(index)
+        
+    elif pilih == 3:
+        schedule_awal(my_schedule)
+        break
+        
+    else:
+        print("Pilihan tidak valid.")
