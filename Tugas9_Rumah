@@ -1,0 +1,29 @@
+from termcolor import cprint
+
+def gambar_rumah():
+    # Atur warna untuk setiap bagian rumah
+    warna_atap = 'yellow'
+    warna_dinding = 'green'
+    warna_pintu = 'blue'
+    warna_jendela = 'cyan'
+
+    # Gambar atap
+    cprint('       /\\', color=warna_atap)
+    cprint('      /  \\', color=warna_atap)
+    cprint('     /    \\', color=warna_atap)
+    cprint('    /      \\', color=warna_atap)
+    cprint('   /        \\', color=warna_atap)
+    cprint('  /          \\', color=warna_atap)
+    cprint(' /            \\', color=warna_atap)
+    
+    cprint('/______________\\', color=warna_atap)
+
+    # Gambar dinding
+    cprint(' |            |', color=warna_dinding)
+    cprint(' |  ___  ___  |', color=warna_dinding)
+    cprint(' | |  |  |  | |', color=warna_dinding)
+    cprint(' | |  |  |__| |', color=warna_dinding)
+    cprint(' |_|__|_______|', color=warna_dinding)
+
+# Panggil fungsi untuk menggambar rumah
+gambar_rumah()
