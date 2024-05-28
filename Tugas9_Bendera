@@ -1,0 +1,9 @@
+from termcolor import cprint
+
+def print_merah_putih(jumlah_baris=5):
+    for i in range(jumlah_baris):
+        cprint(" " * 40, 'red', 'on_red')
+    for i in range(jumlah_baris):
+        cprint(" " * 40, 'white', 'on_white')
+
+print_merah_putih()
